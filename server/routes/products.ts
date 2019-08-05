@@ -5,6 +5,7 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
   try {
+    console.log('fetching products') // tslint:disable-line:no-console
     // const products = await ProductController.GetAllProducts()
     const products = await ProductController.GetAllProductsV3()
     return res.json(products)
