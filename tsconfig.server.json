@@ -3,7 +3,9 @@
   "compilerOptions": {
     "noEmit": false,
     "module": "commonjs",
-    "outDir": ".next/production-server/"
+    "outDir": ".next/production-server/",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "include": ["**/*.ts"],
   "exclude": ["test/**/*.ts"]
