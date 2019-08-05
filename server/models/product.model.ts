@@ -42,7 +42,7 @@ const ProductSchema = new Schema({
   pictures: [String],
   price: Number,
   relationships: {
-    seller: { type: Schema.Types.ObjectId, ref: 'Sellers' }
+    seller: { type: Schema.Types.ObjectId, ref: 'sellers' }
   },
   title: String,
 
@@ -73,4 +73,4 @@ ProductSchema.set('toJSON', {
   }
 })
 
-export default mongoose.model<IProduct>('Products', ProductSchema)
+export default mongoose.model<IProduct>('products', ProductSchema)

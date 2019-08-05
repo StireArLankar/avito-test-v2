@@ -36,4 +36,4 @@ SellerSchema.set('toJSON', {
   }
 })
 
-export default mongoose.model<ISeller>('Sellers', SellerSchema)
+export default mongoose.model<ISeller>('sellers', SellerSchema)
