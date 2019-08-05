@@ -10,7 +10,8 @@
       "ordered-imports": [ false ],
       "object-literal-sort-keys": [ false ],
       "no-var-requires": [ false ],
-      "no-floating-promises": [ false ]
+      "no-floating-promises": [ false ],
+      "interface-over-type-literal": [ false ]
   },
   "rulesDirectory": [],
   "linterOptions": {

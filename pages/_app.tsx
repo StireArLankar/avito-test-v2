@@ -22,7 +22,7 @@ class MyApp extends App<IProps> {
   }
 
   public state = {
-    name: 'Unknown'
+    products: []
   }
 
   public updateState = (newState: object) => {
@@ -38,7 +38,7 @@ class MyApp extends App<IProps> {
         <AppContext.Provider value={{ ...this.state, updateState }}>
           <Layout>
             <Head />
-            <main className='p-2 card'>
+            <main>
               <Component {...pageProps} key={this.props.router.route} />
             </main>
           </Layout>

@@ -1,20 +1,89 @@
-import React from 'react'
-import Shows from 'Components/Shows'
-import fetch from 'isomorphic-unfetch'
+import { compose } from '@typed/compose'
+// import fetch from 'isomorphic-unfetch'
+import React, { useState, useEffect, useContext } from 'react'
+import ProductsContext, { IProduct } from 'Context/products'
+import withFilters from 'Hoc/with-filters'
+import FiltersContext, { filterRules } from 'Context/filters'
+import withSorting from 'Hoc/with-sorting'
+import SortingContext from 'Context/sorting'
+import withFavourites from 'Hoc/with-favourites'
+import FavouritesContext from 'Context/favourites'
+import Main from 'Components/Products'
 
-const Index = (props) => (
-  <Shows shows={props.shows} />
-)
+import style from 'Src/styles/app.module.scss'
 
-Index.getInitialProps = async () => {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
-  const data = await res.json()
+const App = () => {
+  const [ items, setItems ] = useState<IProduct[]>([])
+  const [ filteredItems, setFilteredItems ] = useState<IProduct[]>([])
 
-  console.log(`Show data fetched. Count: ${data.length}`)
+  const { filters } = useContext(FiltersContext)
 
-  return {
-    shows: data
+  const sortingCtx = useContext(SortingContext)
+
+  const { favourites } = useContext(FavouritesContext)
+
+  const fetchItems = async () => {
+    // const url = `${process.env.BASE_URL}/api/product`
+    const url = 'http://localhost:3000/api/product'
+    const data = await fetch(url).then((res) => res.json())
+    console.log(data)
+    return data
   }
+
+  useEffect(() => {
+    const load = async () => {
+      const loadedItems = await fetchItems()
+      setItems(loadedItems)
+      setFilteredItems(loadedItems)
+    }
+
+    load()
+  }, [])
+
+  const sortingValue = sortingCtx.value
+  const sortingRule = sortingCtx.sortingData[sortingValue].rule
+
+  useEffect(() => {
+    const updateItems = () => {
+      const newItems = Object.entries(filterRules).reduce((acc, [ key, rule ]) => {
+        return rule(acc, filters[key], favourites)
+      }, items)
+      const sortedItems = sortingRule(newItems)
+      setFilteredItems(sortedItems)
+    }
+
+    const debounce = setTimeout(updateItems, 300)
+    return () => { clearTimeout(debounce) }
+  }, [favourites, filters, items, sortingRule])
+
+  return (
+    <ProductsContext.Provider value={{ products: filteredItems }}>
+      <div className={style.wrapper}>
+        <Main />
+      </div>
+    </ProductsContext.Provider>
+  )
 }
 
-export default Index
+const composition = compose(
+  withFilters,
+  withFavourites,
+  withSorting
+)
+
+const Index = composition(App)
+
+const Temp = (props: any) => {
+  return <Index {...props} />
+}
+
+// Temp.getInitialProps = async () => {
+//   const res = await fetch(`${process.env.BASE_URL}/api/products`)
+//   const data = await res.json()
+
+//   return {
+//     products: data
+//   }
+// }
+
+export default Temp

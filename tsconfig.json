@@ -21,7 +21,9 @@
     "paths": {
       "Src/*": ["*"],
       "*": ["types/*"],
-      "Components/*" : ["components/*"]
+      "Components/*" : ["components/*"],
+      "Context/*": ["context/*"],
+      "Hoc/*": ["hoc/*"]
     }
   }
 }

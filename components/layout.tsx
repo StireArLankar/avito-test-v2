@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Header from './Header'
+// import Header from './Header'
 
 interface IProps {
   children: React.ReactNode
@@ -8,7 +8,7 @@ interface IProps {
 const Layout = (props: IProps) => {
   return (
     <Fragment>
-      <Header />
+      {/* <Header /> */}
       {props.children}
     </Fragment>
   )
