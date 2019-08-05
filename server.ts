@@ -13,7 +13,7 @@ const handle = app.getRequestHandler()
 mongoose.connect(
   process.env.MDB || 'sorry',
   { useNewUrlParser: true },
-  () => { console.log('Connected to DB') } // tslint:disable-line:no-console
+  () => { console.log('Connected to DB', process.env.MDB) } // tslint:disable-line:no-console
 )
 
 app.prepare().then(() => {
