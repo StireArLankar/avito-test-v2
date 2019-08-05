@@ -2,6 +2,7 @@
 const withTypescript = require('@zeit/next-typescript')
 const withSass = require('@zeit/next-sass')
 const path = require('path')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 require('dotenv').config()
 const Dotenv = require('dotenv-webpack')
@@ -38,7 +39,10 @@ module.exports = withSass(withTypescript({
       new Dotenv({
         path: path.join(__dirname, '.env'),
         systemvars: true
-      })
+      }),
+      new MomentLocalesPlugin({
+        localesToKeep: ['ru'],
+      }), 
     ]
 
     return config

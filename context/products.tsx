@@ -17,6 +17,7 @@ interface IBase {
     }
   }
   title: string
+  created_at: string
 }
 
 interface IAuto extends IBase {

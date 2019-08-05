@@ -9,6 +9,9 @@ import withFavourites from 'Hoc/with-favourites'
 import FavouritesContext from 'Context/favourites'
 import Main from 'Components/Products'
 
+import * as moment from 'moment'
+import 'moment/locale/ru'
+
 import style from 'Src/styles/app.module.scss'
 
 const App = () => {
@@ -22,10 +25,8 @@ const App = () => {
   const { favourites } = useContext(FavouritesContext)
 
   const fetchItems = async () => {
-    // const url = `${process.env.BASE_URL}/api/product`
-    const url = 'http://localhost:3000/api/product'
+    const url = `${process.env.BASE_URL}/api/product`
     const data = await fetch(url).then((res) => res.json())
-    console.log(data)
     return data
   }
 
@@ -35,6 +36,7 @@ const App = () => {
       setItems(loadedItems)
       setFilteredItems(loadedItems)
     }
+    moment.locale('ru')
 
     load()
   }, [])
@@ -70,10 +72,4 @@ const composition = compose(
   withSorting
 )
 
-const Index = composition(App)
-
-const Temp = (props: any) => {
-  return <Index {...props} />
-}
-
-export default Temp
+export default composition(App)

@@ -25,6 +25,8 @@ const Select = (props: ISelectFilter) => {
         placeholder={props.placeholder}
         isClearable={true}
         className={styles.select}
+        id={props.name}
+        inputId={props.name}
       />
     </div>
   )

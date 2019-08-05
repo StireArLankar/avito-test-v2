@@ -1,5 +1,6 @@
 import cn from 'classnames'
 import React, { useContext, Fragment } from 'react'
+import moment from 'moment'
 import { getFormattedPrice } from 'Src/utils'
 import { IProduct } from 'Context/products'
 import FavouritesContext from 'Context/favourites'
@@ -55,7 +56,7 @@ const ProductPreview = (props: IProduct) => {
         <p className={cn(styles.paragraph, styles.price)}>
           {renderPrice()}
         </p>
-        <p className={styles.paragraph}>10 октября 10:37</p>
+        <p className={styles.paragraph}>{moment(props.created_at).format('DD MMMM HH:mm')}</p>
         {renderSellerInfo()}
       </div>
       <div className={styles.favWrapper}>
