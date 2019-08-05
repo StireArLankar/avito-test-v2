@@ -7,7 +7,7 @@
     "dev": "nodemon server.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "heroku-postbuild": "npm run build",
-    "start": "NODE_ENV=production node .next/production-server/server.js",
+    "start": "node .next/production-server/server.js",
     "test": "mocha -r ts-node/register"
   },
   "keywords": [],
