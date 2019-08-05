@@ -42,7 +42,7 @@ const ProductSchema = new Schema({
   pictures: [String],
   price: Number,
   relationships: {
-    seller: { type: Schema.Types.ObjectId, ref: 'Seller' }
+    seller: { type: Schema.Types.ObjectId, ref: 'Sellers' }
   },
   title: String,
 

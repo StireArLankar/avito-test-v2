@@ -38,6 +38,23 @@ const GetAllProducts = async (): Promise<IProduct[]> => {
     .catch((error) => { throw error })
 }
 
+const GetAllProductsV2 = async (): Promise<IProduct[]> => {
+  return Product
+    .find()
+    .populate('relationships.seller')
+    .then((data) => data)
+    .catch((error) => { throw error })
+}
+
+const GetAllProductsV3 = async (): Promise<IProduct[]> => {
+  return Product
+    .find()
+    .populate({ path: 'relationships.seller', select: 'rating name' })
+    .select('category relationships price title pictures created_at')
+    .then((data) => data)
+    .catch((error) => { throw error })
+}
+
 const GetProductById = async (ProductId: string): Promise<IProduct> => {
   return Product.findById(ProductId)
     .then((data) => {
@@ -56,6 +73,8 @@ const RemoveProductById = async (ProductId: string): Promise<any> => {
 export default {
   // CreateProduct,
   UploadProductsFromJSON,
+  GetAllProductsV2,
+  GetAllProductsV3,
   GetAllProducts,
   GetProductById,
   RemoveProductById
