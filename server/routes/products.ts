@@ -26,14 +26,14 @@ router.get('/', async (req, res) => {
 //   }
 // })
 
-router.post('/save', async (req, res) => {
-  try {
-    const result = await ProductController.UploadProductsFromJSON()
-    return res.json({ result })
-  } catch (err) {
-    return res.status(400).json(err.message)
-  }
-})
+// router.post('/save', async (req, res) => {
+//   try {
+//     const result = await ProductController.UploadProductsFromJSON()
+//     return res.json({ result })
+//   } catch (err) {
+//     return res.status(400).json(err.message)
+//   }
+// })
 
 router.get('/:ProductId', async (req, res) => {
   try {

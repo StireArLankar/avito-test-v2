@@ -1,5 +1,5 @@
 import Seller, { ISeller } from '../models/seller.model'
-const sellers = require('../../sellers.json')
+// const sellers = require('../../sellers.json')
 
 // interface ICreateSellerInput {
 //   category: ISeller['category']
@@ -24,11 +24,11 @@ const GetAllSellers = async (): Promise<ISeller[]> => {
     .catch((error) => { throw error })
 }
 
-const UploadSellersFromJSON = async (): Promise<any> => {
-  return Seller.insertMany(sellers)
-    .then(() => sellers)
-    .catch(() => false)
-}
+// const UploadSellersFromJSON = async (): Promise<any> => {
+//   return Seller.insertMany(sellers)
+//     .then(() => sellers)
+//     .catch(() => false)
+// }
 
 const GetSellerById = async (SellerId: string): Promise<ISeller> => {
   return Seller.findById(SellerId)
@@ -47,7 +47,7 @@ const RemoveSellerById = async (SellerId: string): Promise<any> => {
 
 export default {
   // CreateSeller,
-  UploadSellersFromJSON,
+  // UploadSellersFromJSON,
   GetAllSellers,
   GetSellerById,
   RemoveSellerById

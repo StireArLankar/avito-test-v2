@@ -25,14 +25,14 @@ router.get('/', async (req, res) => {
 //   }
 // })
 
-router.post('/save', async (req, res) => {
-  try {
-    const result = await SellerController.UploadSellersFromJSON()
-    return res.json({ result })
-  } catch (err) {
-    return res.status(400).json(err.message)
-  }
-})
+// router.post('/save', async (req, res) => {
+//   try {
+//     const result = await SellerController.UploadSellersFromJSON()
+//     return res.json({ result })
+//   } catch (err) {
+//     return res.status(400).json(err.message)
+//   }
+// })
 
 router.get('/:SellerId', async (req, res) => {
   try {

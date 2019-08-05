@@ -1,6 +1,6 @@
 import Product, { IProduct } from '../models/product.model'
-import Seller from '../models/seller.model'
-const products = require('../../products.json')
+// import Seller from '../models/seller.model'
+// const products = require('../../products.json')
 
 // interface ICreateProductInput {
 //   title: IProduct['title']
@@ -16,21 +16,21 @@ const products = require('../../products.json')
 //     .catch((error) => { throw error })
 // }
 
-const UploadProductsFromJSON = async (): Promise<boolean> => {
-  const sellers = await Seller.find()
-  const mappedProducts = products.map((product) => {
-    const seller = sellers[+product.relationships.seller].id
-    return {
-      ...product,
-      relationships: {
-        seller
-      }
-    }
-  })
-  return Product.insertMany(mappedProducts)
-    .then(() => true)
-    .catch(() => false)
-}
+// const UploadProductsFromJSON = async (): Promise<boolean> => {
+//   const sellers = await Seller.find()
+//   const mappedProducts = products.map((product) => {
+//     const seller = sellers[+product.relationships.seller].id
+//     return {
+//       ...product,
+//       relationships: {
+//         seller
+//       }
+//     }
+//   })
+//   return Product.insertMany(mappedProducts)
+//     .then(() => true)
+//     .catch(() => false)
+// }
 
 const GetAllProducts = async (): Promise<IProduct[]> => {
   return Product.find()
@@ -72,7 +72,7 @@ const RemoveProductById = async (ProductId: string): Promise<any> => {
 
 export default {
   // CreateProduct,
-  UploadProductsFromJSON,
+  // UploadProductsFromJSON,
   GetAllProductsV2,
   GetAllProductsV3,
   GetAllProducts,
