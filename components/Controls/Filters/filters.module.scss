@@ -45,6 +45,7 @@
   text-align: center;
   font-weight: bold;
   display: block;
+  font-size: 1.2rem;
 }
 
 .sumWrapper {
@@ -55,6 +56,10 @@
   width: 50%;
   padding: 0 5px;
   display: flex;
+}
+
+.checkboxLabel {
+  margin: 0 auto;
 }
 
 .input {
@@ -76,28 +81,50 @@
 	overflow: hidden;
 }
 
+$size: 30px;
+
 .checkboxIcon {
   display: block;
+  position: relative;
   margin: 0 auto;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: red;
-  border: 2px solid red;
+  height: $size;
+  width: $size * 2;
+  border-radius: $size / 2;
+  background-color: #c6c6c6;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size;
+    border-radius: $size / 2;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .checkbox:checked + .checkboxIcon {
-  background-color: green;
-  border: 2px solid green;
+  background-color: var(--primary);
+
+  &::before {
+    left: $size;
+  }
 }
 
 .checkbox:focus + .checkboxIcon,
 .checkbox + .checkboxIcon:hover {
-  border: 2px solid black;
-  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.3)
+  &::before {
+    background: var(--light);
+  }
 }
 
 .select {
   z-index: 100;
+  color: black;
 }

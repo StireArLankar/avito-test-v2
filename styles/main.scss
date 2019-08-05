@@ -1,5 +1,21 @@
+@import './normalize.scss';
+@import './fonts.scss';
+
 :global(body) {
   max-width: 1200px;
   margin: 0 auto !important;
   padding-top: 20px;
+  background-color: var(--light-light);
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+:global(:root) {
+  --light-light: rgba(215, 255, 217, 0.5);
+  --light: rgb(178, 250, 180);
+  --primary: rgb(129, 199, 132);
+  --dark: rgb(70, 133, 75);
+  --dark-dark: rgb(0, 61, 51);
+  --counter: rgb(245, 0, 87);
+  --counter-light: rgb(245, 0, 87, 0.5);
+  font-size: 13px;
 }

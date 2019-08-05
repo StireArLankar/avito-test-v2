@@ -6,12 +6,12 @@ import ProductPreview from './ProductPreview'
 import styles from './products.module.scss'
 
 const ProductsList = () => {
-  const [shownAmount, setShownAmount] = useState(12)
+  const [shownAmount, setShownAmount] = useState(10)
   const { products } = useContext(ProductsContext)
   const { value: sortingValue } = useContext(SortingContext)
 
   useEffect(() => {
-    setShownAmount(12)
+    setShownAmount(10)
   }, [products.length, sortingValue])
 
   const renderProducts = () => {
@@ -23,11 +23,11 @@ const ProductsList = () => {
   }
 
   const renderFlexFixers = () => {
-    return (new Array(6).fill(1)).map((_el, index) => <li key={index} className={styles.item} />)
+    return (new Array(5).fill(1)).map((_el, index) => <li key={index} className={styles.item} />)
   }
 
   const showMore = () => {
-    setShownAmount(shownAmount + 12)
+    setShownAmount(shownAmount + 10)
   }
 
   const renderShowMoreButton = () => {

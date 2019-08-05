@@ -9,7 +9,7 @@
 }
 
 .item {
-  width: 45%;
+  width: 48%;
   display: flex;
 
   @media (min-width: 600px) {
@@ -17,15 +17,15 @@
   }
 
   @media (min-width: 800px) {
-    width: 23%;
+    width: 31%;
   }
 
   @media (min-width: 1000px) {
-    width: 19%;
+    width: 23%;
   }
 
   @media (min-width: 1200px) {
-    width: 15%;
+    width: 19%;
   }
 }
 
@@ -39,7 +39,7 @@
   padding: 10px;
   border-radius: 20px;
   color: white;
-  background-color: green;
+  background-color: var(--dark);
   border: none;
   outline: none;
   display: block;

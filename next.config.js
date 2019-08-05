@@ -1,13 +1,14 @@
 // next.config.js
 const withTypescript = require('@zeit/next-typescript')
 const withSass = require('@zeit/next-sass')
+const withFonts = require('next-fonts');
 const path = require('path')
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 require('dotenv').config()
 const Dotenv = require('dotenv-webpack')
 
-module.exports = withSass(withTypescript({
+module.exports = withFonts(withSass(withTypescript({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
@@ -47,4 +48,4 @@ module.exports = withSass(withTypescript({
 
     return config
   }
-}))
+})))

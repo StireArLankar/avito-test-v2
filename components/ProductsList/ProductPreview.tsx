@@ -37,7 +37,7 @@ const ProductPreview = (props: IProduct) => {
       ? (
         <Fragment>
           <span>Стоимость:</span>
-          <span>{`${getFormattedPrice(props.price)}₽`}</span>
+          <span>{`${getFormattedPrice(props.price)} ₽`}</span>
         </Fragment>
       )
       : 'Цена отсутствует'

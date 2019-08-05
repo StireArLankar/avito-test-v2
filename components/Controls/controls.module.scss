@@ -15,7 +15,9 @@
 }
 
 .left {
+  background: linear-gradient(-45deg, var(--dark), var(--dark-dark));
   box-sizing: border-box;
+  color: white;
 
   @media (min-width: 650px) {
     width: 58%;
@@ -27,7 +29,9 @@
 }
 
 .right {
+  background: linear-gradient(-45deg, var(--dark), var(--dark-dark));
   box-sizing: border-box;
+  color: white;
 
   @media (min-width: 650px) {
     width: 40%;

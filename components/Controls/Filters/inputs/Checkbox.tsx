@@ -14,7 +14,7 @@ const Checkbox = (props: ICheckFilter) => {
   return (
     <div className={styles.filter}>
       <p className={styles.label}>{props.title}</p>
-      <label>
+      <label className={styles.checkboxLabel}>
         <input
           type='checkbox'
           id={props.name}

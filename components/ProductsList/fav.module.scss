@@ -6,19 +6,20 @@
 }
 
 .svg {
-  stroke-width: 1px;
-  stroke: green;
-  transform: scale(1.1);
+  stroke-width: 2px;
+  stroke: var(--counter);
+  transform: scale(1);
   transition: all 0.3s ease-in-out;
   fill: none;
 }
 
 .button:hover .svg,
 .button:focus .svg {
-  stroke-width: 2px;
-  stroke: rgb(2, 66, 2);
+  stroke-width: 3px;
+  transform: scale(1.3);
+  stroke: var(--counter);
 }
 
 .active .svg {
-  fill: green;
+  fill: var(--counter);
 }
