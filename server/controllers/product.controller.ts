@@ -47,6 +47,8 @@ const GetAllProductsV2 = async (): Promise<IProduct[]> => {
 }
 
 const GetAllProductsV3 = async (): Promise<IProduct[]> => {
+  const temp = await Product.find()
+  console.log(temp.length)
   return Product
     .find()
     .populate({ path: 'relationships.seller', select: 'rating name' })
