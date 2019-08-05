@@ -1,5 +1,6 @@
 import { compose } from '@typed/compose'
 import React, { useState, useEffect, useContext } from 'react'
+import { withRouter } from 'next/router'
 import ProductsContext, { IProduct } from 'Context/products'
 import withFilters from 'Hoc/with-filters'
 import FiltersContext, { filterRules } from 'Context/filters'
@@ -9,12 +10,12 @@ import withFavourites from 'Hoc/with-favourites'
 import FavouritesContext from 'Context/favourites'
 import Main from 'Components/Products'
 
-import * as moment from 'moment'
+import moment from 'moment'
 import 'moment/locale/ru'
 
 import style from 'Src/styles/app.module.scss'
 
-const App = () => {
+const App = (props) => {
   const [ items, setItems ] = useState<IProduct[]>([])
   const [ filteredItems, setFilteredItems ] = useState<IProduct[]>([])
 
@@ -67,6 +68,7 @@ const App = () => {
 }
 
 const composition = compose(
+  withRouter,
   withFilters,
   withFavourites,
   withSorting

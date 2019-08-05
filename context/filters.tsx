@@ -3,6 +3,7 @@ import filters from './filters-data'
 import { IProduct } from 'Context/products'
 
 export const initialFilters = filters.reduce((acc, el) => ({ ...acc, [el.name]: el.default_value }), {})
+export const filtersData = filters
 
 type rules = {
   [key: string]: (array: IProduct[], value: any, favourites?: string[]) => any[]
