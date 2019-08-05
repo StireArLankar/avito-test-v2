@@ -3,133 +3,114 @@
     "category": "auto",
     "isCompany": true,
     "name": "Вольво-центр Юг",
-    "rating": 3,
-    "id": "0"
+    "rating": 3    
   },
   {
     "category": "auto",
     "isCompany": true,
     "name": "Аркадий Аверченко",
-    "rating": 2.2,
-    "id": "1"
+    "rating": 2.2 
   },
   {
     "category": "auto",
     "isCompany": false,
     "name": "Аркадий Аверченко",
-    "rating": 2.9,
-    "id": "2"
+    "rating": 2.9   
   },
   {
     "category": "auto",
     "isCompany": true,
     "name": "Антон Чехов",
-    "rating": 3.2,
-    "id": "3"
+    "rating": 3.2    
   },
   {
     "category": "auto",
     "isCompany": false,
     "name": "БМВ-центр Север через Северо-Запад",
-    "rating": 4.4,
-    "id": "4"
+    "rating": 4.4    
   },
   {
     "category": "cameras",
     "isCompany": true,
     "name": "Ульмарт",
-    "rating": 5,
-    "id": "5"
+    "rating": 5    
   },
   {
     "category": "cameras",
     "isCompany": false,
     "name": "Лев Толстой",
-    "rating": 3,
-    "id": "6"
+    "rating": 3    
   },
   {
     "category": "cameras",
     "isCompany": true,
     "name": "Ульмарт",
-    "rating": 4.2,
-    "id": "7"
+    "rating": 4.2    
   },
   {
     "category": "cameras",
     "isCompany": true,
     "name": "DNF",
-    "rating": 4.8,
-    "id": "8"
+    "rating": 4.8    
   },
   {
     "category": "immovable",
     "isCompany": true,
     "name": "Антон Чехов",
-    "rating": 3.6,
-    "id": "9"
+    "rating": 3.6    
   },
   {
     "category": "immovable",
     "isCompany": true,
     "name": "Строительная компания «Строй-Траст-Инвест",
-    "rating": 4.4,
-    "id": "10"
+    "rating": 4.4    
   },
   {
     "category": "immovable",
     "isCompany": true,
     "name": "Агентство недвижимости «Озерки»",
-    "rating": 5,
-    "id": "11"
+    "rating": 5    
   },
   {
     "category": "immovable",
     "isCompany": true,
     "name": "Строительная компания «Строй-Траст-Инвест",
-    "rating": 2.7,
-    "id": "12"
+    "rating": 2.7    
   },
   {
     "category": "immovable",
     "isCompany": true,
     "name": "Агентство недвижимости «Озерки»",
-    "rating": 4.4,
-    "id": "13"
+    "rating": 4.4    
   },
   {
     "category": "immovable",
     "isCompany": true,
     "name": "Строительная компания «Строй-Траст-Инвест",
-    "rating": 3.4,
-    "id": "14"
+    "rating": 3.4    
   },
   {
     "category": "laptops",
     "isCompany": false,
     "name": "Аркадий Аверченко",
-    "rating": 2.6,
-    "id": "15"
+    "rating": 2.6    
   },
   {
     "category": "laptops",
     "isCompany": false,
     "name": "Re:Stor",
-    "rating": 2.8,
-    "id": "16"
+    "rating": 2.8    
   },
   {
     "category": "laptops",
     "isCompany": false,
     "name": "Аркадий Аверченко",
-    "rating": 3.1,
-    "id": "17"
+    "rating": 3.1    
   },
   {
     "category": "laptops",
     "isCompany": true,
     "name": "Re:Stor",
-    "rating": 4.5,
-    "id": "18"
+    "rating": 4.5    
   }
 ]
