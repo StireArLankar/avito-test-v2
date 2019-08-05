@@ -38,9 +38,7 @@ class MyApp extends App<IProps> {
         <AppContext.Provider value={{ ...this.state, updateState }}>
           <Layout>
             <Head />
-            <main>
-              <Component {...pageProps} key={this.props.router.route} />
-            </main>
+            <Component {...pageProps} key={this.props.router.route} />
           </Layout>
         </AppContext.Provider>
       </Container>

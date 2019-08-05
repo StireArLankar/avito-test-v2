@@ -19,7 +19,7 @@ const products = require('../../products.json')
 const UploadProductsFromJSON = async (): Promise<boolean> => {
   const sellers = await Seller.find()
   const mappedProducts = products.map((product) => {
-    const seller = sellers[+product.relationships.seller]._id
+    const seller = sellers[+product.relationships.seller].id
     return {
       ...product,
       relationships: {

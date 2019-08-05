@@ -64,4 +64,13 @@ const ProductSchema = new Schema({
   square: Number,
 }, { timestamps: { createdAt: 'created_at' } })
 
+ProductSchema.set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform: (doc, ret) => {
+    ret.id = ret._id
+    delete ret._id
+  }
+})
+
 export default mongoose.model<IProduct>('Products', ProductSchema)

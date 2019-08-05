@@ -10,12 +10,12 @@ import styles from './product.module.scss'
 const ProductPreview = (props: IProduct) => {
   const favouritesCtx = useContext(FavouritesContext)
 
-  const isFav = favouritesCtx.favourites.includes(props._id)
+  const isFav = favouritesCtx.favourites.includes(props.id)
 
   const onFavClick = () => {
     return isFav
-      ? favouritesCtx.removeProductFromFav(props._id)
-      : favouritesCtx.addProductToFav(props._id)
+      ? favouritesCtx.removeProductFromFav(props.id)
+      : favouritesCtx.addProductToFav(props.id)
   }
 
   const renderSellerInfo = () => {

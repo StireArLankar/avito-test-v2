@@ -27,4 +27,13 @@ const SellerSchema = new Schema({
   }
 }, { timestamps: { createdAt: 'created_at' } })
 
+SellerSchema.set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform: (doc, ret) => {
+    ret.id = ret._id
+    delete ret._id
+  }
+})
+
 export default mongoose.model<ISeller>('Sellers', SellerSchema)

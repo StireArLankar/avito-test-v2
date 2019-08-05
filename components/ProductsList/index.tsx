@@ -16,7 +16,7 @@ const ProductsList = () => {
 
   const renderProducts = () => {
     return products.slice(0, shownAmount).map((product) => (
-      <li key={product._id} className={styles.item}>
+      <li key={product.id} className={styles.item}>
         <ProductPreview {...product} />
       </li>
     ))

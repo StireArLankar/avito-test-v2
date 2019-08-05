@@ -14,7 +14,7 @@ const sumRule = (array: IProduct[], value: sumval) => (
 )
 
 const favRule = (array: IProduct[], showOnlyFav: boolean, favourites: string[]) => (
-  showOnlyFav ? array.filter((item) => favourites.includes(item._id)) : array
+  showOnlyFav ? array.filter((item) => favourites.includes(item.id)) : array
 )
 
 const data: IFilter[] = [

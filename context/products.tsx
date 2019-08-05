@@ -6,13 +6,13 @@ interface IBase {
     lng: number
   }
   category: string
-  _id: string
+  id: string
   pictures: string[]
   price: number
   relationships: {
     seller: {
       name: string
-      _id: string
+      id: string
       rating: number
     }
   }
